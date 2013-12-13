@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin title="BIRT Plugin">
+  <content-type type="rptdesign" mime-type="text/html">
+    <title>BIRT</title>
+    <description>BIRT</description>
+    <meta-provider>com.smile.pentaho.birtplugin.BIRTContentTypeMetaProvider</meta-provider>
+    <operations>
+      <operation><id>RUN</id></operation>
+    </operations>
+  </content-type>
+  <content-generator id="birtplugin" title="BIRT Viewer" type="rptdesign" class="com.smile.pentaho.birtplugin.BIRTContentGenerator"/>
+</plugin>

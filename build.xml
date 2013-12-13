@@ -1,0 +1,47 @@
+<project name="Pentaho BIRT Plugin" basedir="." default="deploy">
+    <property file="build.properties" />
+    <echo message="deploy dest: ${deploy.dest} " />
+	<path id="master-classpath">
+	  <fileset dir="lib">
+	    <include name="*.jar"/>
+	  </fileset>
+	</path>
+
+	<target name="clean" >
+		<delete dir="build" />
+		<delete dir="dist" />	
+	</target>
+	<target name="init" depends="clean">
+		<mkdir dir="build/classes" />
+		<mkdir dir="dist" />
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac destdir="build/classes" includeantruntime="false">
+		  <src path="src"/>
+		  <!--classpath refid="master-classpath"/-->
+          <classpath>
+              <fileset dir="${birt.reportengine.dir}/lib" />
+              <fileset dir="${deploy.dest}/tomcat/webapps/pentaho/WEB-INF/lib" />
+              <fileset dir="${deploy.dest}/tomcat/lib" />
+              <!--athelement location="${deploy.dest}/tomcat/webapps/pentaho/WEB-INF/lib/commons-logging-1.1.1.jar" /-->
+          </classpath>
+		</javac>
+	</target>
+		
+	<target name="compress" depends="compile" >
+		<jar destfile="dist/birt-plugin/lib/birt-plugin.jar" basedir="build/classes" />
+	</target>
+	
+	<target name="package" depends="compile,compress">
+		<copy todir="dist/birt-plugin" >
+			<fileset dir="package-res" />
+		</copy>
+	</target>
+	
+	<target name="deploy" depends="package" >
+		<copy todir="${deploy.dest}/pentaho-solutions/system" >
+			<fileset dir="dist" />
+		</copy>
+	</target>
+</project>	
