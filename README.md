@@ -7,7 +7,9 @@ It requires the WebViewerExample deployment in Tomcat webapps directory.
 Building
 --------
 The BIRT plugin is built with Apache Ant.
+
 1) rename build.properties.example to build.properties and set environment properties in build.properties
+
 2) run ant
 
 License
