@@ -32,6 +32,7 @@ Deploy plugin:
 
 
 Testing the Plugin:
+
 	1) Start pentaho.
 
 	2) from the Birt runtime, copy/upload the file "hello_world.rptdesign" into the pentaho repository.
