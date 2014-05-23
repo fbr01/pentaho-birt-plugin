@@ -8,10 +8,10 @@ Building
 --------
 The BIRT plugin is built with Apache Ant.
 
-Before we compile the Plugin
-	1) download Birt runtime distribution into your local machine
-	2) Stop Pentaho Server
-	3) copy "WebViewerExample" from Birt runtime into pentaho´s tomcat (follow BIRT instructions for this)
+Before we compile the Plugin.
+1) download Birt runtime distribution into your local machine.
+2) Stop Pentaho Server.
+3) copy "WebViewerExample" from Birt runtime into pentaho´s tomcat (follow BIRT instructions for this).
 
 Builing the Plugin:
 1) copy build.properties.example to build.properties 
@@ -19,11 +19,11 @@ Builing the Plugin:
 3) run "ant package" to build the destrubtion file of Birt plugin using your properties
 
 Deploy plugin:
-1) run "and deploy" to copy the Birt plugin into Pentaho´s System folder
+1) run "and deploy" to copy the Birt plugin into Pentaho´s System folder.
 
 Testing the Plugin:
-1) Start pentaho
-2) from the Birt runtime, copy/upload the file "hello_world.rptdesign" into the pentaho repository
+1) Start pentaho.
+2) from the Birt runtime, copy/upload the file "hello_world.rptdesign" into the pentaho repository.
 3) click on the hello world and see it working....
 
 
