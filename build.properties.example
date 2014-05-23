@@ -1,2 +1,12 @@
-birt.reportengine.dir=
-deploy.dest=
+#location of birt runtime files
+birt.reportengine.dir=C:\\Birt\\birt-runtime-4_3_2\\birt-runtime-4_3_2\\ReportEngine
+
+#location of Pentaho server
+deploy.dest=C:\\Pentaho\\server\\biserver-ee
+
+#location where report temporal files are created
+birt.reportGeneratedTempLocation=C:\\Pentaho\\server\\biserver-ee\\tomcat\\webapps\\WebViewerExample
+
+#URL of the Birt Viewer
+birt.viewerURL=/WebViewerExample/frameset
+

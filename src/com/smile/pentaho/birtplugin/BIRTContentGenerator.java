@@ -59,7 +59,7 @@ public class BIRTContentGenerator extends SimpleContentGenerator {
       this.repository = PentahoSystem.get(IUnifiedRepository.class, session);
       
    	  RepositoryFile BIRTfile = (RepositoryFile) parameterProviders.get("path").getParameter("file");
-   	  String ExecBIRTFilePath = "../../pentaho-solutions/"+BIRTfile.getId()+".rptdesign";
+   	  String ExecBIRTFilePath = "${birt.reportGeneratedTempLocation}/"+BIRTfile.getId()+".rptdesign";
 	  /*
 	   * Get BIRT report design from repository  	  
 	   */
@@ -96,7 +96,7 @@ public class BIRTContentGenerator extends SimpleContentGenerator {
 		  
 		  //Redirect
 		  HttpServletResponse response = (HttpServletResponse) this.parameterProviders.get("path").getParameter("httpresponse");
-		  response.sendRedirect("/WebViewerExample/frameset?__report="+BIRTfile.getId()+".rptdesign&__showtitle=false&username="+session.getName()+"&userroles="+roles+"&reportname="+BIRTfile.getTitle());
+		  response.sendRedirect("${birt.viewerURL}?__report="+BIRTfile.getId()+".rptdesign&__showtitle=false&username="+session.getName()+"&userroles="+roles+"&reportname="+BIRTfile.getTitle());
 	  } catch (Exception e) {
 		  Logger.error(getClass().getName(), e.getMessage());
 	  }
